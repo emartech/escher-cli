@@ -1,0 +1,17 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    addressable (2.3.8)
+    escher (0.3.7)
+      addressable (~> 2.3)
+    thor (0.19.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  escher
+  thor
+
+BUNDLED WITH
+   1.10.6
