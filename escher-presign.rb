@@ -8,7 +8,7 @@ class EscherCli < Thor
 
 
 
-  def presign(credential_scope, key = nil, secret = nil, url = nil)
+  def presign(credential_scope, key, secret, url)
     escher = Escher::Auth.new(credential_scope)
     puts escher.generate_signed_url(url, { api_key_id: key, api_secret: secret })
   end
