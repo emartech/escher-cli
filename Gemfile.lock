@@ -4,6 +4,17 @@ GEM
     addressable (2.3.8)
     escher (0.3.7)
       addressable (~> 2.3)
+    escher-keypool (0.0.1)
+    faraday (0.9.2)
+      multipart-post (>= 1.2, < 3)
+    faraday-cli (0.7.3)
+      faraday
+      pwd
+    faraday_middleware-escher (0.3.3)
+      escher
+      faraday
+    multipart-post (2.0.0)
+    pwd (1.1.0)
     thor (0.19.1)
 
 PLATFORMS
@@ -11,6 +22,9 @@ PLATFORMS
 
 DEPENDENCIES
   escher
+  escher-keypool
+  faraday-cli
+  faraday_middleware-escher
   thor
 
 BUNDLED WITH
