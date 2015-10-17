@@ -28,7 +28,7 @@ $ echo 'export PATH="$HOME/.escher-cli/bin:$PATH"' >> ~/.bash_profile
 
 ## Configuration
  - Open `~/.escher-cli/conf/faraday.rb` in your favorite editor.
- - Setup your keypool. See [escher-keypool-ruby](https://github.com/emartech/escher-keypool-ruby)
+ - Setup your keypool. (see [escher-keypool-ruby](https://github.com/emartech/escher-keypool-ruby))
 
 ## Usage information
 `$ escher-cli`
