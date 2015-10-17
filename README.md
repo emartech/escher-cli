@@ -1,24 +1,38 @@
 # escher-cli
 CLI for EscherAuth in Ruby
 
+## Features
+ - presign url
+ - [faraday-cli](https://github.com/adamluzsi/faraday-cli.rb) (Console line interface for faraday gem client so you can use your favorite middleware based ruby http client on the terminal!)
+
 ## Requirements
  - Ruby 2.2.3
  - Bundler gem
 
 ## Install
-When you've met the requirements, cd into the escher-cli directory and:
+1. Check out into `~/.escher-cli`.
 ```
-chmod +x ./escher-cli.rb
-bundle install
+$ git clone https://github.com/emartech/escher-cli.git ~/.escher-cli
 ```
+2. Install dependencies.
+```
+$ cd ~/.escher-cli
+$ bundle install
+```
+3. Add ~/.escher-cli/bin to your $PATH for access to the EscherAuth command-line utility.
+```
+$ echo 'export PATH="$HOME/.escher-cli/bin:$PATH"' >> ~/.bash_profile
+```
+ - __Ubuntu Desktop__ note: Modify your ~/.bashrc instead of ~/.bash_profile.
+ - __Zsh__ note: Modify your ~/.zshrc file instead of ~/.bash_profile.
 
-## Usage
-Simply: `./escher-cli.rb` and follow the instructions.
+## Configuration
+ - Open `~/.escher-cli/conf/faraday.rb` in your favorite editor.
+ - Setup your keypool. See [escher-keypool-ruby](https://github.com/emartech/escher-keypool-ruby)
 
-## Features
- - presign url
+## Usage information
+`$ escher-cli`
 
-### Todo
- - send signed request
- - authenticate
- - "installer"
+### TODO
+ - escher-keypool management
+ - ?authenticate?
