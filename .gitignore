@@ -36,5 +36,3 @@ build/
 
 # JetBrains
 .idea/
-
-conf/faraday.rb
