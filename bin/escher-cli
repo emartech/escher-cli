@@ -4,8 +4,7 @@ require 'thor'
 require 'escher'
 
 class EscherCli < Thor
-
-  desc "presign CREDENTIAL_SCOPE KEY SECRET URL", "Presign URL with given parameters"
+  desc "presign <CREDENTIAL_SCOPE> <KEY> <SECRET> <URL>", "Presign URL with given parameters"
   def presign(credential_scope, key, secret, url)
     escher = Escher::Auth.new(credential_scope)
     puts escher.generate_signed_url(url, { api_key_id: key, api_secret: secret })
@@ -13,18 +12,17 @@ class EscherCli < Thor
 
 
 
-  desc "faraday *PARAMS", "Integrated faraday-cli gem. Using configs from escher-cli/conf/faraday.rb"
+  desc "faraday [OPTIONS] <URL>", "Send Escher signed request to URL"
   def faraday(*args)
-    if not args.empty?
+    if !args.empty?
       config_path = File.join(File.dirname(__FILE__), '..', 'conf/faraday.rb')
       args += ['-K', config_path]
     else
-      args += %w{--help}
+      args += %w(--help)
     end
 
     system "faraday-cli #{args.join ' '}"
   end
-
 end
 
 EscherCli.start(ARGV)
